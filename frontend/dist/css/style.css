@@ -1,0 +1,25 @@
+
+body {
+  background-color: #171b1d;  /* #232020;*/
+  color: #fff;
+}
+
+.fx-height{
+  max-height: 400px;
+  overflow:auto;
+}
+
+.leaderboard {
+  background-color: #2c3336;
+  color: #fff;
+}
+.leaderboard .list-group-item{
+  background-color: #2c3336;
+  color: #fff;
+}
+input[type="text"], textarea {
+
+  background-color : #171b1d; 
+  color: #fff;
+
+}

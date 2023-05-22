@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- fonts <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">-->
+    <link rel="stylesheet" type="text/css"  href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" >
+    <title>shout AI</title>
+  </head>
+  <body class="container-fluid">
+    <header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./images/shoutAIicon.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+          </a>
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+             <li class="nav-item">
+                <a class="nav-link" href="/leaderboard">LeaderBoard</a>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <section class="row mb-5">
+            <img class="rounded mx-auto" alt="shout ai logo" src="./images/shout_ai_logo.png" />
+            <h1 class="text-center">Welcome to our project page!!</h1>
+        </section>
+        <section class="row">
+        <div class="col text-center">
+            <h3>Click to start the game!</h3> 
+            <a class="btn btn-success" href="/game">START GAME</a>
+        </div>
+        <div class="col">
+            <h6 class="text-center">Game functionality</h6> 
+            <ul>
+                <li>Use your voice to tell an AI how to navigate a maze</li>
+                <li>Be sure to click the button Listen then allow microphone access so you can interact with the game with your voice. You can also just use the arrow keys.</li>
+                <li>Once you start the game their will be limited time to escape each maze</li>
+                <li>Good luck and we hope you have fun!</li>
+            </ul>
+
+        </div>
+        </section>
+        <section id="app" class="row">
+            <h6 id="lbheading"  class="col-12 text-center mb-4" >Dynamic Leader</h6>
+            <div id="homeLB" class="col mx-auto fx-height">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                          <th>Rank</th>
+                          <th>username</th>
+                          <th>Score</th>
+                        </tr>
+                      </thead>
+                      <tbody id="lbtable">
+                        
+                      </tbody>
+                  </table>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

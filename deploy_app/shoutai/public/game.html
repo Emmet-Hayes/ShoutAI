@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shout AI Maze Game</title>
+  	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./src/app.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+  </head>
+  <body onload="countdown();">
+    <header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="./images/shoutAIicon.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+          </a>
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+             <li class="nav-item">
+                <a class="nav-link" href="./leaderboard.html">LeaderBoard</a>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="my-4">
+      <label for="username" class="form-label">username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" maxlength="300">
+    </div>
+    <div>Time Left ::
+        <input id="minutes" type="text" style="width: 10px;
+             border: none; font-size: 16px; 
+            font-weight: bold;"> :
+        <input id="seconds" type="text" style="width: 30px;
+                        border: none; font-size: 16px;
+                        font-weight: bold;">
+    </div><br>
+  	<canvas id="canvas" width="258" height="194">
+  		Looks like your browser does not support canvas. Sorry about that :(
+  	</canvas>
+    <p>Please Select Difficulty: </p>
+    <p><input type="radio" name="mazedifficulty" value="s"> Easy</p>
+    <p><input type="radio" name="mazedifficulty" value="m" checked> Medium</p>
+    <p><input type="radio" name="mazedifficulty" value="l"> Hard</p>
+    <p>You can traverse the maze in a 'traditional' way using the arrow keys... or, you can activate voice input using the 'Listen' button below to tell the rectangle to move with speech commands:</p>
+    <button class="btn btn-primary"id="listen" onclick="listen()">Listen</button>
+  	<p> Optionally, you can re-train the Speech Recognition Model on your own voice with the commands below. Your browser will start collecting audio samples as long as you press and hold each command button down.</p>
+    <button id="down" class="btn btn-primary"onmousedown="collect(0)" onmouseup="collect(null)">Down</button>
+  	<button id="left" class="btn btn-primary"onmousedown="collect(1)" onmouseup="collect(null)">Left</button>
+  	<button id="right" class="btn btn-primary"onmousedown="collect(2)" onmouseup="collect(null)">Right</button>
+  	<button id="up" class="btn btn-primary"onmousedown="collect(3)" onmouseup="collect(null)">Up</button>
+  	<button id="noise" class="btn btn-primary"onmousedown="collect(4)" onmouseup="collect(null)">Background Noise</button>
+	  <button id="train" class="btn btn-primary"onmousedown="collect()"onclick="train()">Train</button>
+  	<div id="console"></div>
+    <br>
+    <p>Prediction Key:
+    <p>0 -- Down<br>
+    1 -- Left<br>
+    2 -- Right<br>
+    3 -- Up<br>
+    4 -- Background Noise</p>
+    <script src="./js/mazegame.js"></script>
+    <script src="./js/tfrecognizer.js"></script>
+  </body>
+</html>

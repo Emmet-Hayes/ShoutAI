@@ -1,0 +1,9 @@
+
+server {
+        listen       80 default_server;
+        server_name  localhost;   
+        location / {
+            proxy_pass   http://shoutai:8000;
+        }
+
+}
